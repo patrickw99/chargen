@@ -1,6 +1,6 @@
 #include "dice.h"
 #include "tables.h"
-
+#include <string.h>
 class charclass {
 // Private :
 	int  cAbility [7] ;
@@ -58,7 +58,7 @@ class charclass {
 	int chooseclass ( ) ;
 
 public :
-void rollchar ();
+
 //// ******************character attributs***********************'
 	int  AC ();
 	int  HitPoint ();
@@ -67,14 +67,14 @@ void rollchar ();
 	int  MoveEnc ();
 	int  MoveRun ();
 	int  MoveOther ();
-	char Race () ;
+	char *Race () ;
 	int  Sex  ();
-	char Height () ;
+	char *Height () ;
 	int  Weight  ();
 	int  Age  ();
-	char Hair  ();
-	char Eyes () ;
-	char FullName  ();
+	char *Hair  ();
+	char *Eyes () ;
+	char *FullName  ();
 	int  CharacterClass ();
 	int  Level ();
 
@@ -99,7 +99,7 @@ void rollchar ();
 	int  ParalysisStone ();
 	int  BreathAttack ();
 	int  RodStaffSpell ();
-
+	int  DeathRayPoison ();
 //// ***************cleric/druid turns****************************'
 	int  Skeleton ();
 	int  Zombie ();
@@ -129,18 +129,15 @@ void rollchar ();
 
 
 
-};
+
 
 //'public function
-void charclass::rollchar() {
+void   rollchar();
 void	ChooseSex();
-void	abilities();
-void	chooseHeight();
+
 void	chooseWeight(int Cheight, int cSex);
-void	chooseEye ();
-void	chooseHair ();
-void	chooseclass();
-}
+
+};
 
 // ***************************Abilities************************
 int charclass::Strength () {
@@ -203,155 +200,145 @@ int charclass::MoveRun() {
 int charclass::MoveOther() {
 	return charclass::cMoveOther;
 }
-int charclass::Race as string
-	return charclass::cRace;
+char *charclass::Race (){
+	return charclass::cRace;//[];
 }
-int charclass::Sex  {
+int charclass::Sex()  {
 	return charclass::cSex;
 }
-int charclass::Height  as string
+char *charclass::Height(){
 	return charclass::cHeight;
 }
-int charclass::Weight  {
+int charclass::Weight()  {
 	return charclass::cWeight;
 }
-int charclass::Age  {
+int charclass::Age()  {
 	return charclass::cAge;
 }
-int charclass::Hair as string
+char *charclass::Hair(){
 	return charclass::cHair;
 }
-int charclass::Eyes   as string
+char *charclass::Eyes() {
 	return charclass::cEyes;
 }
-int charclass::FullName  as string
+char *charclass::FullName(){
 	return charclass::cFullName;
 }
-int charclass::CharacterClass {
+int charclass::CharacterClass() {
 	return charclass::cClass;
 }
-int charclass::Level {
+int charclass::Level() {
 	return charclass::cLevel;
 }
  // ******************************Theif Skills*****************'
 int charclass::OpenLocks() {
-	return charclass::ctskill [1]
+	return charclass::ctskill [1];
 }
 int charclass::FindTraps() {
-	return charclass::ctskill [2]
+	return charclass::ctskill [2];
 }
 int charclass::RemoveTraps() {
-	return charclass::ctskill [3]
+	return charclass::ctskill [3];
 }
 int charclass::ClimbWalls() {
-	return charclass::ctskill [4]
+	return charclass::ctskill [4];
 }
 int charclass::MoveSilently() {
-	return charclass::ctskill [5]
+	return charclass::ctskill [5];
 }
 int charclass::HideinShadows() {
-	return charclass::ctskill [6]
+	return charclass::ctskill [6];
 }
 int charclass::PickPockets() {
-	return charclass::ctskill [7]
+	return charclass::ctskill [7];
 }
 int charclass::HearNoise() {
-	return charclass::ctskill [8]
+	return charclass::ctskill [8];
 }
+// ******************saving throws ***********************'
 int charclass::DeathRayPoison () {
-	return charclass::csaves[2]
+	return charclass::csaves[2];
 }
 
-// ******************saving throws ***********************'
 int charclass::MagicWands () {
-	return charclass::csaves[3]
+	return charclass::csaves[3];
 }
 int charclass::ParalysisStone () {
-	return charclass::csaves[4]
+	return charclass::csaves[4];
 }
 int charclass::BreathAttack () {
-	return charclass::csaves[5]
+	return charclass::csaves[5];
 }
 int charclass::RodStaffSpell () {
-	return charclass::csaves[6]
-}
+	return charclass::csaves[6];
+};
 
 // ***************cleric/druid turns****************************'
 int charclass::Skeleton () {
-	return charclass::cturns[3]
+	return charclass::cturns[3];
 }
 int charclass::Zombie () {
-	return charclass::cturns[4]
+	return charclass::cturns[4];
 }
 int charclass::Ghoul () {
-	return charclass::cturns[5]
+	return charclass::cturns[5];
 }
 int charclass::Wight () {
-	return charclass::cturns[6]
+	return charclass::cturns[6];
 }
 int charclass::Wraith () {
-	return charclass::cturns[7]
+	return charclass::cturns[7];
 }
 int charclass::Mummy () {
-	return charclass::cturns[8]
+	return charclass::cturns[8];
 }
 int charclass::Spectre () {
-	return charclass::cturns[9]
+	return charclass::cturns[9];
 }
 int charclass::Vampire () {
-	return charclass::cturns[10]
+	return charclass::cturns[10];
 }
 int charclass::Phantom () {
-	return charclass::cturns[11]
+	return charclass::cturns[11];
 }
 int charclass::Haunt () {
-	return charclass::cturns[12]
+	return charclass::cturns[12];
 }
 int charclass::Spirit () {
-	return charclass::cturns[13]
+	return charclass::cturns[13];
 }
 int charclass::Nightshade () {
-	return charclass::cturns[14]
+	return charclass::cturns[14];
 }
 int charclass::Lich () {
-	return charclass::cturns([15]
+	return charclass::cturns[15];
 }
 int charclass::Special () {
-	return charclass::cturns[16]
+	return charclass::cturns[16];
 }
 
 //'Private functions and sub's
 void charclass::ChooseSex(){
-	CSex = RollDice(1,2);
+	charclass::cSex = RollDice(1,2);
 
 }
 
-Sub int charclass::chooseHeight ()
- dim height {
- height = rollDice(1, 10)
- select case height
-	case 1
-		cHeight = "4 ft 10 in"
-	case 2
-		cHeight = "5 ft 0 in"
-	case 3
-		cHeight = "5 ft 2 in"
-	case 4
-		cHeight = "5 ft 4 in"
-	case 5
-		cHeight = "5 ft 6 in"
-	case 6
-		cHeight = "5 ft 8 in"
-	case 7
-		cHeight = "5 ft 10 in"
-	case 8
-		cHeight = "6 ft 0 in"
-	case 9
-		cHeight = "6 ft 2 in"
-	case 10
-		cHeight = "6 ft 4 in"
-end select
-end Sub
+void charclass::chooseHeight (){
+int height ;
+ height = RollDice(1, 10);
+ switch (height){
+	case 1:		strncpy(charclass::cHeight , "4 ft 10 in",20); break;
+	case 2:		strncpy(charclass::cHeight ,"5 ft 0 in",20); break;
+	case 3: 	strncpy(charclass::cHeight,"5 ft 2 in",20); break;
+	case 4:		strncpy(charclass::cHeight ,"5 ft 4 in",20); break;
+	case 5:		strncpy(charclass::cHeight , "5 ft 6 in",20); break;
+	case 6:		strncpy(charclass::cHeight , "5 ft 8 in",20); break;
+	case 7:		strncpy(charclass::cHeight , "5 ft 10 in",20); break;
+	case 8:		strncpy(charclass::cHeight , "6 ft 0 in",20); break;
+	case 9:		strncpy(charclass::cHeight , "6 ft 2 in",20); break;
+	case 10:	strncpy(charclass::cHeight , "6 ft 4 in",20); break;
+}
+}
 sub int charclass::chooseWeight (height as string, sex {)
 
 select Case height
@@ -605,35 +592,36 @@ Function int charclass::chooseclass() {
 
 
 //driver / test
+//#ifdef test
+//Dim charclass As CbaseClass
+//Dim x {
 
-Dim charclass As CbaseClass
-Dim x {
+//For x=0 To 5
 
-For x=0 To 5
+//charclass.rollchar()
+//Print "str: ";charclass.cAbility[1],"int: ";charclass.cAbility[2],"wis: ";charclass.cAbility[3],"dex: ";charclass.cAbility[4],"con: ";charclass.cAbility[5],"chr: ";charclass.cAbility[6]
+//Print "stradj: ";charclass.cadjust[1],"intadj: ";charclass.cadjust[2],"wisadj: ";charclass.cadjust[3],"dexadj: ";charclass.cadjust[4],"conadj: ";charclass.cadjust[5],"chradj: ";charclass.cadjust[6]
+//Print "sex: ";charclass.cSex,"Height:"; charclass.cHeight, "Weight: ";  charclass.cWeight, "hair:";  charclass.cHair, "eyes: ";  charclass.ceyes
 
-charclass.rollchar()
-Print "str: ";charclass.cAbility[1],"int: ";charclass.cAbility[2],"wis: ";charclass.cAbility[3],"dex: ";charclass.cAbility[4],"con: ";charclass.cAbility[5],"chr: ";charclass.cAbility[6]
-Print "stradj: ";charclass.cadjust[1],"intadj: ";charclass.cadjust[2],"wisadj: ";charclass.cadjust[3],"dexadj: ";charclass.cadjust[4],"conadj: ";charclass.cadjust[5],"chradj: ";charclass.cadjust[6]
-Print "sex: ";charclass.cSex,"Height:"; charclass.cHeight, "Weight: ";  charclass.cWeight, "hair:";  charclass.cHair, "eyes: ";  charclass.ceyes
+//select case charclass.cclass
+	//case 1
+	//Print "class: Fighter"
+	//case 2
+	//Print "class: Cleric"
+	//case 3
+	//Print "class: Mage"
+	//case 4
+	//Print "class: Theif"
+	//case 5
+	//Print "class: Elf"
+	//c//ase 6
+	//Print "class: Dwarf"
+	//case 7
+	//Print "class: Halfling"
 
-select case charclass.cclass
-	case 1
-	Print "class: Fighter"
-	case 2
-	Print "class: Cleric"
-	case 3
-	Print "class: Mage"
-	case 4
-	Print "class: Theif"
-	case 5
-	Print "class: Elf"
-	case 6
-	Print "class: Dwarf"
-	case 7
-	Print "class: Halfling"
+//end select
 
-end select
-
-Print "class: "; charclass.cclass
-Next x
-Sleep
+//Print "class: "; charclass.cclass
+//Next x
+//Sleep
+//#endif
