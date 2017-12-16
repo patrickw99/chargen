@@ -1,3 +1,4 @@
+#include "cgen.h"
 #include "dice.h"
 #include "tables.h"
 #include <string.h>
@@ -50,13 +51,13 @@ class charclass {
 	void chooseSex ();
 	void chooseHeight() ;
 	void chooseHair()  ;
-	void chooseWeight(char hight[] , int sex );
-	void CharMovement(int cMoveEncb );
+	void chooseWeight( );
+	void CharMovement( );
 	void chooseEye () ;
-	int  abilitiesadj ( int ability  ) ;
+	int  abilitiesadj () ;
 	void abilities () ;
 	int chooseclass ( ) ;
-
+	
 public :
 
 //// ******************character attributs***********************'
@@ -135,7 +136,7 @@ public :
 void   rollchar();
 void	ChooseSex();
 
-void	chooseWeight(int Cheight, int cSex);
+
 
 };
 
@@ -327,19 +328,19 @@ void charclass::chooseHeight (){
 int height ;
  height = RollDice(1, 10);
  switch (height){
-	case 1:		strncpy(charclass::cHeight , "4 ft 10 in",20); break;
+	case 1:		strncpy(charclass::cHeight ,"4 ft 10 in",20); break;
 	case 2:		strncpy(charclass::cHeight ,"5 ft 0 in",20); break;
-	case 3: 	strncpy(charclass::cHeight,"5 ft 2 in",20); break;
+	case 3: 	strncpy(charclass::cHeight ,"5 ft 2 in",20); break;
 	case 4:		strncpy(charclass::cHeight ,"5 ft 4 in",20); break;
-	case 5:		strncpy(charclass::cHeight , "5 ft 6 in",20); break;
-	case 6:		strncpy(charclass::cHeight , "5 ft 8 in",20); break;
-	case 7:		strncpy(charclass::cHeight , "5 ft 10 in",20); break;
-	case 8:		strncpy(charclass::cHeight , "6 ft 0 in",20); break;
-	case 9:		strncpy(charclass::cHeight , "6 ft 2 in",20); break;
-	case 10:	strncpy(charclass::cHeight , "6 ft 4 in",20); break;
+	case 5:		strncpy(charclass::cHeight ,"5 ft 6 in",20); break;
+	case 6:		strncpy(charclass::cHeight ,"5 ft 8 in",20); break;
+	case 7:		strncpy(charclass::cHeight ,"5 ft 10 in",20); break;
+	case 8:		strncpy(charclass::cHeight ,"6 ft 0 in",20); break;
+	case 9:		strncpy(charclass::cHeight ,"6 ft 2 in",20); break;
+	case 10:	strncpy(charclass::cHeight ,"6 ft 4 in",20); break;
 }
 }
-sub int charclass::chooseWeight (height as string, sex {)
+void charclass::chooseWeight (){
 
 select Case height
     case "4 ft 10 in"
