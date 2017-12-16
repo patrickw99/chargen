@@ -129,109 +129,109 @@ void rollchar ();
 
 
 
-}
+};
 
 //'public function
 void charclass::rollchar() {
-	ChooseSex();
-	abilities();
-	chooseHeight();
-	chooseWeight(int Cheight, int cSex);
-	chooseEye ();
-	chooseHair ();
-	cClass = chooseclass();
+void	ChooseSex();
+void	abilities();
+void	chooseHeight();
+void	chooseWeight(int Cheight, int cSex);
+void	chooseEye ();
+void	chooseHair ();
+void	chooseclass();
 }
 
 // ***************************Abilities************************
 int charclass::Strength () {
-	return charclass::cAbility[1]
+	return charclass::cAbility[1];
 }
 int charclass::Intellegence () {
-	return charclass::cAbility[2]
+	return charclass::cAbility[2];
 }
 int charclass::Wisdom () {
-	return charclass::cAbility[3]
+	return charclass::cAbility[3];
 }
 int charclass::Dexterity () {
-	return charclass::cAbility[4]
+	return charclass::cAbility[4];
 }
 int charclass::Constitution () {
-	return charclass::cAbility[5]
+	return charclass::cAbility[5];
 }
 int charclass::Charisma () {
-	return charclass::cAbility[6]
+	return charclass::cAbility[6];
 }
 
 // ************************Ability Adjustments********************
 int charclass::StrengthAdjustment () {
-	return charclass::cadjust[1]
+	return charclass::cadjust[1];
 }
 int charclass::IntellegenceAdjustment () {
-	return charclass::cadjust[2]
+	return charclass::cadjust[2];
 }
 int charclass::WisdomAdjustment () {
-	return charclass::cadjust[3]
+	return charclass::cadjust[3];
 }
 int charclass::DexterityAdjustment () {
-	return charclass::cadjust[4]
+	return charclass::cadjust[4];
 }
 int charclass::ConstitutionAdjustment () {
-	return charclass::cadjust[5]
+	return charclass::cadjust[5];
 }
 int charclass::CharismaAdjustment () {
-	return charclass::cadjust[6]
+	return charclass::cadjust[6];
 }
 // *****************character attributes. '
-int charclass::cAC (){
-	return charclass::
+int charclass::AC (){
+	return charclass::cAC;
 }
 int charclass::HitPoint() {
-	return charclass::cHitPoint
+	return charclass::cHitPoint;
 }
 int charclass::Damage() {
-	return charclass::cDamage
+	return charclass::cDamage;
 }
 int charclass::MoveNor() {
-	return charclass::cMoveNor
+	return charclass::cMoveNor;
 }
 int charclass::MoveEnc() {
-	return charclass::MoveEnc
+	return charclass::cMoveEnc;
 }
 int charclass::MoveRun() {
-	return charclass::cMoveRun
+	return charclass::cMoveRun;
 }
 int charclass::MoveOther() {
-	return charclass::cMoveOther
+	return charclass::cMoveOther;
 }
 int charclass::Race as string
-	return charclass::cRace
+	return charclass::cRace;
 }
 int charclass::Sex  {
-	return charclass::cSex
+	return charclass::cSex;
 }
 int charclass::Height  as string
-	return charclass::cHeight
+	return charclass::cHeight;
 }
 int charclass::Weight  {
-	return charclass::cWeight
+	return charclass::cWeight;
 }
 int charclass::Age  {
-	return charclass::cAge
+	return charclass::cAge;
 }
 int charclass::Hair as string
-	return charclass::cHair
+	return charclass::cHair;
 }
 int charclass::Eyes   as string
-	return charclass::cEyes
+	return charclass::cEyes;
 }
 int charclass::FullName  as string
-	return charclass::cFullName
+	return charclass::cFullName;
 }
 int charclass::CharacterClass {
-	return charclass::cClass
+	return charclass::cClass;
 }
 int charclass::Level {
-	return charclass::cLevel
+	return charclass::cLevel;
 }
  // ******************************Theif Skills*****************'
 int charclass::OpenLocks() {
@@ -321,10 +321,10 @@ int charclass::Special () {
 }
 
 //'Private functions and sub's
-Sub int charclass::ChooseSex()
-	CSex = RollDice(1,2)
+void charclass::ChooseSex(){
+	CSex = RollDice(1,2);
 
-End Sub
+}
 
 Sub int charclass::chooseHeight ()
  dim height {
@@ -535,12 +535,12 @@ Sub int charclass::abilities()
     Dim y {  = UBound (cAbility)
     Dim  i {
         for i = LBound(cAbility) To UBound (cAbility)
-        cAbility(i) = RollDice(3,6)
-        'Print "cability: "; cability(i)
+        cAbility(i) = RollDice(3,6);
+        //'Print "cability: "; cability(i)
     Next
    for i = LBound(cadjust) To UBound (cadjust)
-        cadjust(i) = abilitiesadj(cability(i))
-        'Print "CAdjust: "; cadjust(i)
+        cadjust(i) = abilitiesadj(cability(i));
+        //'Print "CAdjust: "; cadjust(i)
     Next
 End Sub
 Function int charclass::chooseclass() {
@@ -604,7 +604,7 @@ Function int charclass::chooseclass() {
 }
 
 
-'driver / test
+//driver / test
 
 Dim charclass As CbaseClass
 Dim x {
