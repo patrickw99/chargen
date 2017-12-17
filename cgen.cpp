@@ -52,11 +52,11 @@ class charclass {
 	void chooseHeight() ;
 	void chooseHair()  ;
 	void chooseWeight( );
-	void CharMovement( );
+	void charMovement( );
 	void chooseEye () ;
-	int  abilitiesadj () ;
+	void abilitiesadj () ;
 	void abilities () ;
-	int chooseclass ( ) ;
+	void chooseclass ( ) ;
 	
 public :
 
@@ -134,7 +134,7 @@ public :
 
 //'public function
 void   rollchar();
-void	ChooseSex();
+
 
 
 
@@ -319,7 +319,7 @@ int charclass::Special () {
 }
 
 //'Private functions and sub's
-void charclass::ChooseSex(){
+void charclass::chooseSex(){
 	charclass::cSex = RollDice(1,2);
 
 }
@@ -408,8 +408,8 @@ select Case height
         end if
   end select
 
-end Sub
-Sub int charclass::CharMovement(cMoveEncb {)
+
+ int charclass::charMovement(){
 	select Case cMoveEncb
 		case 0 to 400
 			cMoveNor = 120
