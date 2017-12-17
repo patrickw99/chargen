@@ -344,7 +344,7 @@ void charclass::chooseWeight (){
 
 select Case height
     case "4 ft 10 in"
-        if sex = Male then
+        if sex = Male 
 			cWeight = rnd_range (1100,1199)
         else
          cWeight = rnd_range (1050, 1099)
@@ -352,56 +352,56 @@ select Case height
 
     case "5 ft 0 in"
 
-       if sex = Male then
+       if sex = Male 
            cWeight = rnd_range (1200,1299)
          else
            cWeight = rnd_range (1100 , 1199)
        end if
     case "5 ft 2 in"
 
-        if sex = Male then
+        if sex = Male 
             cWeight = rnd_range (1300,1399)
          else
             cWeight = rnd_range (1200,1249)
        end if
     case "5 ft 4 in"
-        if sex = Male then
+        if sex = Male 
             cWeight = rnd_range (1400,1499)
         else
             cWeight = rnd_range (1250,1299)
        end if
     case"5 ft 6 in"
-        if sex = Male then
+        if sex = Male 
            cWeight = rnd_range (1500,1549)
          else
            cWeight = rnd_range (1300,1399)
         end if
     case "5 ft 8 in "
-       if sex = Male then
+       if sex = Male 
             cWeight = rnd_range (1550, 1649)
          else
             cWeight = rnd_range ( 1400,1499)
         end if
     case"5 ft 10 in"
-        if sex = Male then
+        if sex = Male 
             cWeight = rnd_range (1650,1749)
          else
             cWeight = rnd_range (1500,1549)
        end if
     case "6 ft 0 in"
-        if sex = Male then
+        if sex = Male 
            cWeight = rnd_range (1750,1849)
          else
             cWeight = rnd_range (1550,1649)
        end if
     case  "6 ft 2 in"
-        if sex = Male then
+        if sex = Male 
             cWeight = rnd_range (1850,1999)
          else
             cWeight = rnd_range (1650,1749)
         end if
     case "6 ft 4 in"
-        if sex = Male then
+        if sex = Male 
            cWeight = rnd_range ( 2000,2100)
          else
             cWeight = rnd_range (1750,1850)
