@@ -11,6 +11,7 @@ class charclass {
 	char  cRace [20];
 	int   cSex ;
 	char  cHeight[20] ;
+	int	  chrHeight;
 	int   cWeight;
 	int   cAge;
 	char  cHair[20]  ;
@@ -328,85 +329,86 @@ void charclass::chooseHeight (){
 int height ;
  height = RollDice(1, 10);
  switch (height){
-	case 1:		strncpy(charclass::cHeight ,"4 ft 10 in",20); break;
-	case 2:		strncpy(charclass::cHeight ,"5 ft 0 in",20); break;
-	case 3: 	strncpy(charclass::cHeight ,"5 ft 2 in",20); break;
-	case 4:		strncpy(charclass::cHeight ,"5 ft 4 in",20); break;
-	case 5:		strncpy(charclass::cHeight ,"5 ft 6 in",20); break;
-	case 6:		strncpy(charclass::cHeight ,"5 ft 8 in",20); break;
-	case 7:		strncpy(charclass::cHeight ,"5 ft 10 in",20); break;
-	case 8:		strncpy(charclass::cHeight ,"6 ft 0 in",20); break;
-	case 9:		strncpy(charclass::cHeight ,"6 ft 2 in",20); break;
-	case 10:	strncpy(charclass::cHeight ,"6 ft 4 in",20); break;
+	case 1:		chrHeight = height; strncpy(cHeight ,chHeight[0],20); break;
+	case 2:		chrHeight = height;strncpy(cHeight ,chHeight[1],20); break;
+	case 3: 	chrHeight = height;strncpy(cHeight ,chHeight[2],20); break;
+	case 4:		chrHeight = height;strncpy(cHeight ,chHeight[3],20); break;
+	case 5:		chrHeight = height;strncpy(cHeight ,chHeight[4],20); break;
+	case 6:		chrHeight = height;strncpy(cHeight ,chHeight[5],20); break;
+	case 7:		chrHeight = height;strncpy(cHeight ,chHeight[6],20); break;
+	case 8:		chrHeight = height;strncpy(cHeight ,chHeight[7],20); break;
+	case 9:		chrHeight = height;strncpy(cHeight ,chHeight[8],20); break;
+	case 10:	chrHeight = height;strncpy(cHeight ,chHeight[9],20); break;
 }
 }
 void charclass::chooseWeight (){
 
-select Case height
-    case "4 ft 10 in"
+switch (chrHeight){
+	
+    case 1:
         if sex = Male 
 			cWeight = rnd_range (1100,1199)
         else
          cWeight = rnd_range (1050, 1099)
       end if
 
-    case "5 ft 0 in"
+    case 2:
 
        if sex = Male 
            cWeight = rnd_range (1200,1299)
          else
            cWeight = rnd_range (1100 , 1199)
        end if
-    case "5 ft 2 in"
+    case 3:
 
         if sex = Male 
             cWeight = rnd_range (1300,1399)
          else
             cWeight = rnd_range (1200,1249)
        end if
-    case "5 ft 4 in"
+    case 4:
         if sex = Male 
             cWeight = rnd_range (1400,1499)
         else
             cWeight = rnd_range (1250,1299)
        end if
-    case"5 ft 6 in"
+    case 5:
         if sex = Male 
            cWeight = rnd_range (1500,1549)
          else
            cWeight = rnd_range (1300,1399)
         end if
-    case "5 ft 8 in "
+    case 6:
        if sex = Male 
             cWeight = rnd_range (1550, 1649)
          else
             cWeight = rnd_range ( 1400,1499)
         end if
-    case"5 ft 10 in"
+    case 7:
         if sex = Male 
             cWeight = rnd_range (1650,1749)
          else
             cWeight = rnd_range (1500,1549)
        end if
-    case "6 ft 0 in"
+    case 8:
         if sex = Male 
            cWeight = rnd_range (1750,1849)
          else
             cWeight = rnd_range (1550,1649)
        end if
-    case  "6 ft 2 in"
+    case  9:
         if sex = Male 
             cWeight = rnd_range (1850,1999)
          else
             cWeight = rnd_range (1650,1749)
         end if
-    case "6 ft 4 in"
+    case 10;
         if sex = Male 
            cWeight = rnd_range ( 2000,2100)
          else
             cWeight = rnd_range (1750,1850)
         end if
-  end select
+ }
 
 
  int charclass::charMovement(){
