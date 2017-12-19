@@ -53,7 +53,7 @@ class charclass {
 	void chooseHeight() ;
 	void chooseHair()  ;
 	void chooseWeight( );
-	void charMovement( );
+	void charMovement();
 	void chooseEye () ;
 	void abilitiesadj () ;
 	void abilities () ;
@@ -412,35 +412,35 @@ switch (chrHeight){
 	 }
 
 }
- int charclass::charMovement(){
-	select Case cMoveEncb
-		case 0 to 400
-			cMoveNor = 120
-			cMoveEnc = 40
-			cMoveRun = 120
-		case 401 to 800
-			cMoveNor = 90
-			cMoveEnc = 30
-			cMoveRun = 90
-		case 801 to 1200
-			cMoveNor = 60
-			cMoveEnc = 20
-			cMoveRun = 60
-		case 1201 to 1600
-			cMoveNor = 30
-			cMoveEnc = 10
-			cMoveRun = 30
-		case 1601 to 2400
-			cMoveNor = 15
-			cMoveEnc = 5
-			cMoveRun = 15
-		case is >= 2401
-			cMoveNor = 0
-			cMoveEnc = 0
-			cMoveRun = 0
-	end select
+void charclass::charMovement(){
+	
+		if (cMoveEnc >=0 && cMoveEnc <= 400){
+			cMoveNor = 120;
+			cMoveEnc = 40;
+			cMoveRun = 120;
+		} else if ( cMoveEnc >=401 && cMoveEnc<= 800){
+			cMoveNor = 90;
+			cMoveEnc = 30;
+			cMoveRun = 90;
+		} else if ( cMoveEnc >= 801 && cMoveEnc<= 1200){
+			cMoveNor = 60;
+			cMoveEnc = 20;
+			cMoveRun = 60;
+		} else if ( cMoveEnc >=1201 && cMoveEnc<=1600){
+			cMoveNor = 30;
+			cMoveEnc = 10;
+			cMoveRun = 30;
+		} else if ( cMoveEnc >= 1601 && cMoveEnc<= 2400){
+			cMoveNor = 15;
+			cMoveEnc = 5;
+			cMoveRun = 15;
+		} else {
+			cMoveNor = 0;
+			cMoveEnc = 0;
+			cMoveRun = 0;
+		}
 
-end Sub
+}
 Sub int charclass::chooseEye ()
 	dim  eye  { = rollDice(1, 100)
 select case eye
