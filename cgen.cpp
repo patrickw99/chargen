@@ -346,71 +346,72 @@ void charclass::chooseWeight (){
 switch (chrHeight){
 	
     case 1:
-        if sex = Male 
-			cWeight = rnd_range (1100,1199)
-        else
-         cWeight = rnd_range (1050, 1099)
-      end if
+        if (cSex == Male){ 
+			cWeight = rnd_range (1100,1199);
+        }else{
+            cWeight = rnd_range (1050,1099);
+        }break;
 
     case 2:
 
-       if sex = Male 
-           cWeight = rnd_range (1200,1299)
-         else
-           cWeight = rnd_range (1100 , 1199)
-       end if
+       if (cSex == Male ){ 
+           cWeight = rnd_range (1200,1299);
+         }else{
+           cWeight = rnd_range (1100 , 1199);
+        }break;
     case 3:
 
-        if sex = Male 
-            cWeight = rnd_range (1300,1399)
-         else
-            cWeight = rnd_range (1200,1249)
-       end if
+       if (cSex  == Male  ){
+            cWeight = rnd_range (1300,1399);
+         }else{
+            cWeight = rnd_range (1200,1249);
+       }break;
     case 4:
-        if sex = Male 
-            cWeight = rnd_range (1400,1499)
-        else
-            cWeight = rnd_range (1250,1299)
-       end if
+        if (cSex == Male ){
+            cWeight = rnd_range (1400,1499);
+        }else{
+            cWeight = rnd_range (1250,1299);
+        }break;
     case 5:
-        if sex = Male 
-           cWeight = rnd_range (1500,1549)
-         else
-           cWeight = rnd_range (1300,1399)
-        end if
+        if (cSex == Male  ){
+           cWeight = rnd_range (1500,1549);
+         }else{
+           cWeight = rnd_range (1300,1399);
+         }break;
     case 6:
-       if sex = Male 
-            cWeight = rnd_range (1550, 1649)
-         else
-            cWeight = rnd_range ( 1400,1499)
-        end if
+       if (cSex  == Male  ){
+            cWeight = rnd_range (1550, 1649);
+         }else{
+            cWeight = rnd_range ( 1400,1499);
+         }break;
     case 7:
-        if sex = Male 
-            cWeight = rnd_range (1650,1749)
-         else
-            cWeight = rnd_range (1500,1549)
-       end if
+       if (cSex  == Male  ){
+            cWeight = rnd_range (1650,1749);
+         }else{
+            cWeight = rnd_range (1500,1549);
+        }break;
     case 8:
-        if sex = Male 
-           cWeight = rnd_range (1750,1849)
-         else
-            cWeight = rnd_range (1550,1649)
-       end if
+       if (cSex  == Male  ){
+           cWeight = rnd_range (1750,1849);
+         }else{
+            cWeight = rnd_range (1550,1649);
+        }break;
     case  9:
-        if sex = Male 
-            cWeight = rnd_range (1850,1999)
-         else
-            cWeight = rnd_range (1650,1749)
-        end if
-    case 10;
-        if sex = Male 
-           cWeight = rnd_range ( 2000,2100)
-         else
-            cWeight = rnd_range (1750,1850)
-        end if
- }
+       if (cSex  == Male  ){
+            cWeight = rnd_range (1850,1999);
+         }else{
+            cWeight = rnd_range (1650,1749);
+         }
+         break;
+    case 10:
+        if (cSex  == Male  ){
+           cWeight = rnd_range ( 2000,2100);
+         }else{
+            cWeight = rnd_range (1750,1850);
+         }
+	 }
 
-
+}
  int charclass::charMovement(){
 	select Case cMoveEncb
 		case 0 to 400
