@@ -340,6 +340,6 @@ char magelvl9[13][35]={"Contingency","Create Any Monster","Gate*","Heal","Immuni
 char chHeight[10][12] = {"4 ft 10 in","5 ft 0 in","5 ft 2 in","5 ft 4 in","5 ft 6 in","5 ft 8 in","5 ft 10 in","6 ft 0 in","6 ft 2 in","6 ft 4 in"};
 
 char chEyes[6][20] ={"Amber","Brown","Hazel","Green","Blue" , "Gray"};
-
+char chHair[12][20] = {"Black","Gray","Platinum","White","Dark Blonde","Blonde","Bleach Blonde", "Dark Redhead","Redhead","Light Redhead","Brunette","Auburn"};
 
 #endif

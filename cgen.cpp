@@ -14,7 +14,7 @@ class charclass {
 	int	  chrHeight;
 	int   cWeight;
 	int   cAge;
-	char  cHair[20]  ;
+	int  cHair  ;
 	int  cEyes ;
 	char  cFullName[20] ;
 	char  cAlignment [20];
@@ -76,7 +76,7 @@ public :
 	int  Weight  ();
 	int  Age  ();
 	char *Hair  ();
-	char *Eyes () ;
+	int  Eyes () ;
 	char *FullName  ();
 	int  CharacterClass ();
 	int  Level ();
@@ -221,7 +221,7 @@ int charclass::Age()  {
 char *charclass::Hair(){
 	return charclass::cHair;
 }
-char *charclass::Eyes() {
+int charclass::Eyes() {
 	return charclass::cEyes;
 }
 char *charclass::FullName(){
@@ -459,66 +459,50 @@ void charclass::chooseEye (){
 	}
 	
 }
- int charclass::chooseHair (){
-	dim  hair  { = rollDice(1, 100)
-select case hair
-	case 1 to 12
-	cHair = "Black"
-	case 13 to 20
-	cHair = "Gray"
-	case 21 to 28
-	cHair = "Platinum"
-	case 29 to 36
-	cHair =  "White"
-	case 37 to 44
-	cHair = "Dark Blonde"
-	case 45 to 52
-	cHair = "Blonde"
-	case 53 to 60
-	cHair = "Bleach Blonde"
-	case 61 to 68
-	cHair =  "Dark Redhead"
-	case 69 to 76
-	cHair =  "Redhead"
-	case 77 to 84
-	cHair = "Light Redhead"
-	case 85 to 92
-	cHair =  "Brunette"
-	case 93 to 100
-	cHair = "Auburn"
-end select
-end Sub
-Function int charclass::abilitiesadj (ability ) {
+void charclass::chooseHair (){
+	int   hair   = RollDice(1, 100);
 
-    if (ability = 3)
-    {
-          return(-3) ;
-    }
-    else if (abbility >=4 && ability <=5)
-    {
-       return (-2);
-    }
-     else if (abbility >=6 && ability <=8)
-    {
-        return (-1);
-    }
-
-
-
-   Select Case ability
-   	Case 3
+	if (hair >= 1 && hair >=  12){
+	cHair = 1;
+	}else if  (hair >= 13 && hair >=   20){
+	cHair = 2;
+	}else if  (hair >=  21 && hair >=   28){
+	cHair = 3;
+	}else if  (hair >=  29 && hair >=   36){
+	cHair = 4;
+	}else if  (hair >=  37 && hair >=   44){
+	cHair = 5;
+	}else if  (hair >=  45 && hair >=   52){
+	cHair = 6;
+	}else if  (hair >=  53 && hair >=   60){
+	cHair = 7;
+	}else if  (hair >=  61 && hair >=   68){
+	cHair =  8;
+	}else if  (hair >=  69 && hair >=   76){
+	cHair =  9;
+	}else if  (hair >=  77 && hair >=   84){
+	cHair = 10;
+	}else if  (hair >= 85 && hair >=   92){
+	cHair =  11;
+	}else if  (hair >=  93 && hair >=   100){
+	cHair = 12;
+ }
+}
+ int charclass::abilitiesadj () {
+   
+   	 if (abbility >= 3
         abilitiesadj = -3
-   	Case 4to 5
+   	 else if (abbility >= 4 && ability <= 5
         abilitiesadj = -2
-   	case 6 To 8
+   	 else if (abbility >= 6 && ability <= 8
         abilitiesadj = -1
-   	case 9 To 1
+   	 else if (abbility >= 9 && ability <= 1
         abilitiesadj = 0
-   	Case 13 To 15
+   	 else if (abbility >= 13 && ability <= 15
        abilitiesadj = 1
-   	Case 16 To 17
+   	 else if (abbility >= 16 && ability <= 17
         abilitiesadj = 2
-   	Case 18
+   	 else if (abbility >= 18
         abilitiesadj = 3
  end Select
 }
