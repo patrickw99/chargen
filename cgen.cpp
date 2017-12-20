@@ -441,23 +441,23 @@ void charclass::charMovement(){
 		}
 
 }
-Sub int charclass::chooseEye ()
-	dim  eye  { = rollDice(1, 100)
-select case eye
-		case 1 to 16
-			cEyes = "Amber"
-		case 17 to 36
-			cEyes = "Brown"
-		case 37 to 52
-			cEyes = "Hazel"
-		case 53 to 68
-			cEyes = "Green"
-		case 69 to 84
-			cEyes = "Blue"
-		case 85 to 100
-			cEyes = "Gray"
-	end select
-end Sub
+void charclass::chooseEye (){
+	int   eye   = RollDice(1, 100);
+	if (eye >= 1  && eye >= 16){
+			cEyes = "Amber";
+	} else if (eye >= 17 to 36){
+			cEyes = "Brown";
+	} else if (eye >= 37 to 52){
+			cEyes = "Hazel";
+	} else if (eye >= 53 to 68){
+			cEyes = "Green";
+	} else if (eye >= 69 to 84){
+			cEyes = "Blue";
+	} else if (eye >=  85 to 100){
+			cEyes = "Gray";
+	}
+	
+}
 Sub int charclass::chooseHair ()
 	dim  hair  { = rollDice(1, 100)
 select case hair
