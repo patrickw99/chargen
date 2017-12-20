@@ -15,7 +15,7 @@ class charclass {
 	int   cWeight;
 	int   cAge;
 	char  cHair[20]  ;
-	char  cEyes[20] ;
+	int  cEyes ;
 	char  cFullName[20] ;
 	char  cAlignment [20];
 
@@ -29,6 +29,7 @@ class charclass {
 	int   cHitPoint;
 	int   cDamage;
 
+	int   cEnc;
 	int   cMoveNor;
 	int   cMoveEnc;
 	int   cMoveRun;
@@ -414,23 +415,23 @@ switch (chrHeight){
 }
 void charclass::charMovement(){
 	
-		if (cMoveEnc >=0 && cMoveEnc <= 400){
+		if (cEnc >=0 && cEnc <= 400){
 			cMoveNor = 120;
 			cMoveEnc = 40;
 			cMoveRun = 120;
-		} else if ( cMoveEnc >=401 && cMoveEnc<= 800){
+		} else if ( cEnc >=401 && cEnc<= 800){
 			cMoveNor = 90;
 			cMoveEnc = 30;
 			cMoveRun = 90;
-		} else if ( cMoveEnc >= 801 && cMoveEnc<= 1200){
+		} else if ( cEnc >= 801 && cEnc<= 1200){
 			cMoveNor = 60;
 			cMoveEnc = 20;
 			cMoveRun = 60;
-		} else if ( cMoveEnc >=1201 && cMoveEnc<=1600){
+		} else if ( cEnc >=1201 && cEnc<=1600){
 			cMoveNor = 30;
 			cMoveEnc = 10;
 			cMoveRun = 30;
-		} else if ( cMoveEnc >= 1601 && cMoveEnc<= 2400){
+		} else if ( cEnc >= 1601 && cEnc<= 2400){
 			cMoveNor = 15;
 			cMoveEnc = 5;
 			cMoveRun = 15;
@@ -444,21 +445,21 @@ void charclass::charMovement(){
 void charclass::chooseEye (){
 	int   eye   = RollDice(1, 100);
 	if (eye >= 1  && eye >= 16){
-			cEyes = "Amber";
-	} else if (eye >= 17 to 36){
-			cEyes = "Brown";
-	} else if (eye >= 37 to 52){
-			cEyes = "Hazel";
-	} else if (eye >= 53 to 68){
-			cEyes = "Green";
-	} else if (eye >= 69 to 84){
-			cEyes = "Blue";
-	} else if (eye >=  85 to 100){
-			cEyes = "Gray";
+			cEyes = 1;
+	} else if (eye >= 17 && eye >=36){
+			cEyes = 2;
+	} else if (eye >= 37 && eye >=52){
+			cEyes = 3;
+	} else if (eye >= 53 && eye >=68){
+			cEyes = 4;
+	} else if (eye >= 69 && eye >=4){
+			cEyes =5;
+	} else if (eye >=  85 && eye >=100){
+			cEyes =6;
 	}
 	
 }
-Sub int charclass::chooseHair ()
+ int charclass::chooseHair (){
 	dim  hair  { = rollDice(1, 100)
 select case hair
 	case 1 to 12
