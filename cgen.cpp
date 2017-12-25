@@ -56,10 +56,14 @@ class charclass {
 	void chooseWeight( );
 	void charMovement();
 	void chooseEye () ;
-	void abilitiesadj () ;
+	int abilitiesadj (int ability) ;
 	void abilities () ;
-	void chooseclass ( ) ;
-	
+	int chooseclass ( ) ;
+	int chooseSpells();
+	int TheifSkill();
+	int ClericTurn();
+	void attackroll() ;
+	void savingthrows();
 public :
 
 //// ******************character attributs***********************'
@@ -75,7 +79,7 @@ public :
 	char *Height () ;
 	int  Weight  ();
 	int  Age  ();
-	char *Hair  ();
+	int Hair  ();
 	int  Eyes () ;
 	char *FullName  ();
 	int  CharacterClass ();
@@ -218,7 +222,7 @@ int charclass::Weight()  {
 int charclass::Age()  {
 	return charclass::cAge;
 }
-char *charclass::Hair(){
+int charclass::Hair(){
 	return charclass::cHair;
 }
 int charclass::Eyes() {
@@ -463,122 +467,279 @@ void charclass::chooseHair (){
 	int   hair   = RollDice(1, 100);
 
 	if (hair >= 1 && hair >=  12){
-	cHair = 1;
+	cHair = BlackHair;
 	}else if  (hair >= 13 && hair >=   20){
-	cHair = 2;
+	cHair = GrayHair;
 	}else if  (hair >=  21 && hair >=   28){
-	cHair = 3;
+	cHair = PlatinumHair;
 	}else if  (hair >=  29 && hair >=   36){
-	cHair = 4;
+	cHair = WhiteHair;
 	}else if  (hair >=  37 && hair >=   44){
-	cHair = 5;
+	cHair = DarkBlondeHair;
 	}else if  (hair >=  45 && hair >=   52){
-	cHair = 6;
+	cHair = BlondeHair;
 	}else if  (hair >=  53 && hair >=   60){
-	cHair = 7;
+	cHair = BleachBlondeHair;
 	}else if  (hair >=  61 && hair >=   68){
-	cHair =  8;
+	cHair =  DarkRedHair;
 	}else if  (hair >=  69 && hair >=   76){
-	cHair =  9;
+	cHair =  RedHair;
 	}else if  (hair >=  77 && hair >=   84){
-	cHair = 10;
+	cHair = LightRedHair;
 	}else if  (hair >= 85 && hair >=   92){
-	cHair =  11;
+	cHair =  BrunetteHair;
 	}else if  (hair >=  93 && hair >=   100){
-	cHair = 12;
+	cHair = AuburnHair;
  }
 }
- int charclass::abilitiesadj () {
+ int charclass::abilitiesadj (int ability) {
    
-   	 if (abbility >= 3
-        abilitiesadj = -3
-   	 else if (abbility >= 4 && ability <= 5
-        abilitiesadj = -2
-   	 else if (abbility >= 6 && ability <= 8
-        abilitiesadj = -1
-   	 else if (abbility >= 9 && ability <= 1
-        abilitiesadj = 0
-   	 else if (abbility >= 13 && ability <= 15
-       abilitiesadj = 1
-   	 else if (abbility >= 16 && ability <= 17
-        abilitiesadj = 2
-   	 else if (abbility >= 18
-        abilitiesadj = 3
- end Select
+   	 if (ability >= 3){
+        return (-3);
+   	 }else if (ability >= 4 && ability <= 5){
+        return (-2);
+   	 }else if (ability >= 6 && ability <= 8){
+        return ( -1);
+   	} else if (ability >= 9 && ability <= 1){
+       return ( 0);
+   	} else if (ability >= 13 && ability <= 15){
+       return ( 1);
+   	} else if (ability >= 16 && ability <= 17){
+        return (2);
+   	} else if (ability >= 18){
+        return ( 3);
+ }
 }
-Sub int charclass::abilities()
-    Dim x { = LBound (cAbility)
-    Dim y {  = UBound (cAbility)
-    Dim  i {
-        for i = LBound(cAbility) To UBound (cAbility)
-        cAbility(i) = RollDice(3,6);
-        //'Print "cability: "; cability(i)
-    Next
-   for i = LBound(cadjust) To UBound (cadjust)
-        cadjust(i) = abilitiesadj(cability(i));
-        //'Print "CAdjust: "; cadjust(i)
-    Next
-End Sub
-Function int charclass::chooseclass() {
-	Dim ClassChoice(0 to 8) {
-	Dim count { =1
-	dim rclass {
-	dim ccount {  = -1
+void charclass::abilities(){
+    
+    int i; 
+    for (i = 0 ; i<= 7 ; i++){
+        cAbility[i] = RollDice(3,6);
+        cadjust[i] = abilitiesadj(cAbility[i]);
+   }
+   
+}
 
-	do
-	If cAbility[1] >= 9 Then
-		classChoice(count) = Fighter
-		count += 1
-		ccount=1
-	EndIf
+int charclass::chooseclass() {
+	int ClassChoice [8]= {0,0,0,0,0,0,0,0};
+	int count  =1;
+	int rclass =0;
+	int ccount  = -1;
 
-	If cAbility[2] >= 9 then
-      classChoice(count) = Mage
-    	count += 1
-    	ccount=1
-	EndIf
+ while (ccount == -1){
+	if (cAbility[1] >= 9 ){
+		ClassChoice[count] = Fighter;
+		count += 1;
+		ccount=1;
+	}
 
-    if cAbility[3] >= 9 Then
-    	classChoice(count) = cleric
-    	count += 1
-    	ccount=1
-    EndIf
+	if (cAbility[2] >= 9 ){
+      ClassChoice[count] = Mage;
+    	count += 1;
+    	ccount=1;
+	}
 
-    if cAbility[4] >= 9 Then
-    	classChoice(count) = theif
-    	count += 1
-    	ccount=1
-    EndIf
+    if (cAbility[3] >= 9) {
+    	ClassChoice[count] = Cleric;
+    	count += 1;
+    	ccount=1;
+    }
 
-    if cAbility[1] >= 9 And  cAbility[2] >= 9 then
-        classChoice(count) = Elf
-        count += 1
-        ccount=1
-    EndIf
+    if (cAbility[4] >= 9) {
+    	ClassChoice[count] = Theif;
+    	count += 1;
+    	ccount=1;
+    }
 
-    if cAbility[1] >= 9 And  cAbility[5] >= 9 Then
-        classChoice(count) =dwarf
-        count += 1
-        ccount=1
-    EndIf
+    if (cAbility[1] >= 9 &&  cAbility[2] >= 9) {
+        ClassChoice[count] = Elf;
+        count += 1;
+        ccount=1;
+    }
 
-    if cAbility[1] >= 9 And  cAbility[4] >= 9 and cAbility[5] >= 9 Then
-        classChoice(count) = halfling
-        count += 1
-        ccount=1
-    EndIf
-    if ccount = -1 then
-    abilities()
-    endif
-    loop while ccount = -1
-    do
-    rclass = pick(ClassChoice())
-    loop while rclass = 0
-    return rclass
+    if (cAbility[1] >= 9 &&  cAbility[5] >= 9) {
+        ClassChoice[count] =Dwarf;
+        count += 1;
+        ccount=1;
+    }
+
+    if (cAbility[1] >= 9 &&  cAbility[4] >= 9 && cAbility[5] >= 9 ){
+        ClassChoice[count] = Halfling;
+        count += 1;
+        ccount=1;
+    }
+    if (ccount == -1) {
+    abilities();
+	}
+}
+   while (rclass == 0){
+    rclass = ClassChoice [rnd_range(0, 8)];
+}
+    return rclass;
 
 
 }
 
+void charclass::savingthrows(){
+int i;
+	int b;
+	
+	switch (cClass){
+	case	Fighter:
+		for (i = 0 ; i<= 13 ; i++){
+			if (cLevel >= fightersaves  [i][0] && cLevel <= fightersaves  [i][1]){
+				for (b=2 ; b>= 7; b++){
+					csaves[b-2]= fightersaves  [i][b];
+				}
+			}
+		}
+	 break;
+	case	Cleric:
+	for (i = 0 ; i<= 9 ; i++){
+			if (cLevel >= clericsaves  [i][0] && cLevel <= clericsaves  [i][1]){
+				for (b=2 ; b>= 7; b++){
+					csaves[b-2]= clericsaves  [i][b];
+				}
+			}
+		}
+	 break;
+	
+	case	Theif:
+	 for (i = 0 ; i<= 9; i++){
+			if (cLevel >= theifsaves  [i][0] && cLevel <= theifsaves  [i][1]){
+				for (b=2 ; b>= 7; b++){
+					csaves[b-2]= theifsaves  [i][b];
+				}
+			}
+		}
+	 
+	 break;
+	case	Mage:
+	for (i = 0 ; i<=8 ; i++){
+			if (cLevel >= magesaves  [i][0] && cLevel <= magesaves  [i][1]){
+				for (b=2 ; b>= 7; b++){
+					csaves[b-2]= magesaves  [i][b];
+				}
+			}
+		}
+	 break;
+	case	Elf:
+	for (i = 0 ; i<= 4 ; i++){
+			if (cLevel >= elfsaves  [i][0] && cLevel <= elfsaves  [i][1]){
+				for (b=2 ; b>= 7; b++){
+					csaves[b-2]= elfsaves  [i][b];
+				}
+			}
+		}
+	 break;
+	case	Dwarf:
+	for (i = 0 ; i<= 4; i++){
+			if (cLevel >= dwarfsaves  [i][0] && cLevel <= dwarfsaves  [i][1]){
+				for (b=2 ; b>= 7; b++){
+					csaves[b-2]= dwarfsaves  [i][b];
+				}
+			}
+		}
+	 break;
+	case	Halfling:
+	 for (i = 0 ; i<= 3 ; i++){
+			if (cLevel >= halflingsaves  [i][0] && cLevel <= halflingsaves  [i][1]){
+				for (b=2 ; b>= 7; b++){
+					csaves[b-2]= halflingsaves  [i][b];
+				}
+			}
+		}
+	 
+	 break;
+	
+	
+		
+	}	
+}
+void charclass::attackroll() {
+
+int i; 
+int b;
+	
+	switch (cClass){
+	case	Fighter:
+		for (i = 0 ; i<= 13 ; i++){
+			if (cLevel >= fighterattack  [i][0] && cLevel <= fighterattack  [i][1]){
+				for (b=2 ; b>= 43; b++){
+					cattack[b-2]= fighterattack  [i][b];
+				}
+			}
+		}
+	 break;
+	case	Cleric:
+	case	Theif:
+	 for (i = 0 ; i<= 10 ; i++){
+			if (cLevel >= ctdattack  [i][0] && cLevel <= ctdattack  [i][1]){
+				for (b=2 ; b>= 43; b++){
+					cattack[b-2]= ctdattack  [i][b];
+				}
+			}
+		}
+	 
+	 break;
+	case	Mage:
+	for (i = 0 ; i<= 15 ; i++){
+			if (cLevel >= mageattack  [i][0] && cLevel <= mageattack  [i][1]){
+				for (b=2 ; b>= 43; b++){
+					cattack[b-2]= mageattack  [i][b];
+				}
+			}
+		}
+	 break;
+	case	Elf:
+	case	Dwarf:
+	case	Halfling:
+	 for (i = 0 ; i<= 15 ; i++){
+			if (cLevel >= dhattack  [i][0] && cLevel <= dhattack  [i][1]){
+				for (b=2 ; b>= 43; b++){
+					cattack[b-2]= dhattack  [i][b];
+				}
+			}
+		}
+	 
+	 break;
+	
+	
+		
+	}
+}
+
+void charclass::chooseSpells(){
+	
+}
+void charclass::TheifSkill(){
+
+int b;
+			
+				for (b=0 ; b>= 8; b++){
+					ctskill[b]= theifskills  [cLevel][b];
+				}
+		
+		
+}
+
+void charclass::ClericTurn(){
+	
+}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 //driver / test
 //#ifdef test

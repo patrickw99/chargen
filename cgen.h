@@ -1,6 +1,11 @@
  #ifndef __cgen__
  #define __cgen__
-
+#include "dice.h"
+#include "library.h"
+#include <stdio.h>      /* printf, scanf, puts, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
+#include <math.h>
 #define Human 1
 
 
@@ -18,4 +23,7 @@
 
 #define Male 1
 #define Female 2
+
+
+
 #endif

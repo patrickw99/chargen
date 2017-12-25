@@ -120,7 +120,7 @@ int  dwarfsaves[4][7] =
 {7,9,4,5,6,7,6},
 {10,36,2,3,4,4,3}};
 
-int  halflingsaves [4][7] =
+int  halflingsaves [3][7] =
 {{1,3,8,9,10,13,12},
 {4,6,5,6,7,9,8},
 {7,36,2,3,4,5,4}};
@@ -219,7 +219,7 @@ int  magespells [37 ][ 9]  =
 // *****************************************************************************
 char  turnhead [14][20]  = {"Skeleton","Zombie","Ghoul","Wight","Wraith","Mummy","Spectre","Vampire","Phantom","Haunt","Spirit","Nightshade","Lich","Special"};
 char turnsdefault [15][5]  = {"-","-","-","-","-","-","-","-","-","-","-","-","-","-"};
-char  turns  [37 ][15] [20]  =
+char  turns  [37 ][14] [20]  =
 {{"-","-","-","-","-","-","-","-","-","-","-","-","-","-"},
 {"7","9","11","-","-","-","-","-","-","-","-","-","-","-"},
 {"T ","7","9","11","-","-","-","-","-","-","-","-","-","-"},
@@ -336,10 +336,56 @@ char magelvl7[13][35]={"Charm Plant","Create Normal Monsters","Delayed Blast Fir
 char magelvl8[13][35]={"Clone","Create Magical Monsters","Dance","Explosive Cloud","Force Field","Mass Charm*","Mind Barrier*","Permanence","Polymorph any Object","Power Word Blind","Steelform","Symbol","Travel "};
 char magelvl9[13][35]={"Contingency","Create Any Monster","Gate*","Heal","Immunity","Maze","Meteor Swarm","Power Word Kill","Prismatic Wall","Shapechange","Survival","Timestop","Wish "};
 
+// Height
+#define FourTen 1
+#define Five	2
+#define FiveTwo	3
+#define FiveFour	4
+#define FiveSix	5
+#define FiveEight	6
+#define FiveTen	7
+#define	Six	8
+#define SixTwo	9
+#define SixFour	10
 
 char chHeight[10][12] = {"4 ft 10 in","5 ft 0 in","5 ft 2 in","5 ft 4 in","5 ft 6 in","5 ft 8 in","5 ft 10 in","6 ft 0 in","6 ft 2 in","6 ft 4 in"};
+// hair color
 
-char chEyes[6][20] ={"Amber","Brown","Hazel","Green","Blue" , "Gray"};
+#define BlackHair	1
+#define GrayHair	2
+#define PlatinumHair	3
+#define WhiteHair	4
+#define DarkBlondeHair	5
+#define BlondeHair	6
+#define BleachBlondeHair	7
+#define DarkRedHair	8
+#define RedHair    9
+#define LightRedHair	10
+#define BrunetteHair	11
+#define AuburnHair	12
 char chHair[12][20] = {"Black","Gray","Platinum","White","Dark Blonde","Blonde","Bleach Blonde", "Dark Redhead","Redhead","Light Redhead","Brunette","Auburn"};
+// Eye color
+#define amberEyes	1
+#define brownEyes	2
+#define hazelEyes	3
+#define greenEyes	4
+#define blueEyes	5
+#define greyEyes	6
+char chEyes[6][20] ={"Amber","Brown","Hazel","Green","Blue" , "Gray"};
+// Skin Color
+
+#define PaleSkin	1
+#define FairSkin	2
+#define LightSkin	3
+#define LightTanSkin	4
+#define TanSkin	5
+#define DarkTanSkin	6
+#define BrownSkin	7
+#define DarkBrownSkin	8
+#define BlackSkin	9
+char chSkinColor [9][20] = { "Pale", "Fair","Light","Light Tan","Tan","Dark Tan","Brown","Dark Brown","Black"};
+
+
+
 
 #endif

@@ -1,9 +1,4 @@
-#include "dice.h"
-#include "library.h"
-#include <stdio.h>      /* printf, scanf, puts, NULL */
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
-#include <math.h>
+#include "cgen.h"
 
 //'' Function to a random number in the range [first, last), or {first <= x < last}.
 int  rnd_range (int first , int last ){
@@ -11,28 +6,11 @@ int  rnd_range (int first , int last ){
    int range;
    //rnd_range = Rnd * (last - first +1) + first
    range = round(rand() % ((last - first +1) + first));
+   return (range);
 }
 
 
-char pick (char list[] ){
-	int upper;
-	int lower=0;
-	int roll;
-	upper = ubound (list);
-	roll = rnd_range(lower, upper);
-	return list[roll];
-}
 
-int pick (int list[] )
-{
-	int upper;
-	int lower=0;
-	int roll;
-	upper = ubound (list);
-	roll = rnd_range(lower, upper);
-	return list[roll];
-	//return list(rnd_range (lbound(list), ubound(list)-1));
-}
 
 /* boolean convenience functions */
 int CoinToss() {
