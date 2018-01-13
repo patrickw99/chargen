@@ -14,8 +14,8 @@ class charclass {
 	int	  chrHeight;
 	int   cWeight;
 	int   cAge;
-	int  cHair  ;
-	int  cEyes ;
+	int   cHair  ;
+	int   cEyes ;
 	char  cFullName[20] ;
 	char  cAlignment [20];
 
@@ -45,7 +45,7 @@ class charclass {
 	int   cLevel ;
 
 	int   csaves [10] ;
-	char  cturns [17] ;
+	char  cturns [17][20] ;
 	int   cCspell [10] ;
 	int   cmespell[12] ;
 	int   ctskill [11]  ;
@@ -59,9 +59,9 @@ class charclass {
 	int abilitiesadj (int ability) ;
 	void abilities () ;
 	int chooseclass ( ) ;
-	int chooseSpells();
-	int TheifSkill();
-	int ClericTurn();
+	void chooseSpells();
+	void TheifSkill();
+	void ClericTurn();
 	void attackroll() ;
 	void savingthrows();
 public :
@@ -102,36 +102,36 @@ public :
 	int  CharismaAdjustment ();
 
 //// ******************saving throws ***********************'
-	int  MagicWands ();
-	int  ParalysisStone ();
-	int  BreathAttack ();
-	int  RodStaffSpell ();
-	int  DeathRayPoison ();
+	int  cMagicWands ();
+	int  cParalysisStone ();
+	int  cBreathAttack ();
+	int  cRodStaffSpell ();
+	int  cDeathRayPoison ();
 //// ***************cleric/druid turns****************************'
-	int  Skeleton ();
-	int  Zombie ();
-	int  Ghoul ();
-	int  Wight ();
-	int  Wraith ();
-	int  Mummy ();
-	int  Spectre ();
-	int  Vampire ();
-	int  Phantom ();
-	int  Haunt ();
-	int  Spirit ();
-	int  Nightshade ();
-	int  Lich ();
-	int  Special ();
+	int  cSkeleton ();
+	int  cZombie ();
+	int  cGhoul ();
+	int  cWight ();
+	int  cWraith ();
+	int  cMummy ();
+	int  cSpectre ();
+	int  cVampire ();
+	int  cPhantom ();
+	int  cHaunt ();
+	int  cSpirit ();
+	int  cNightshade ();
+	int  cLich ();
+	int  cSpecial ();
 
  //// ******************************Theif Skills*****************'
-	int  OpenLocks ();
-	int  FindTraps ();
-	int  RemoveTraps ();
-	int  ClimbWalls ();
-	int  MoveSilently ();
-	int  HideinShadows ();
-	int  PickPockets ();
-	int  HearNoise ();
+	int  cOpenLocks ();
+	int  cFindTraps ();
+	int  cRemoveTraps ();
+	int  cClimbWalls ();
+	int  cMoveSilently ();
+	int  cHideinShadows ();
+	int  cPickPockets ();
+	int  cHearNoise ();
 
 
 
@@ -238,89 +238,89 @@ int charclass::Level() {
 	return charclass::cLevel;
 }
  // ******************************Theif Skills*****************'
-int charclass::OpenLocks() {
+int charclass::cOpenLocks() {
 	return charclass::ctskill [1];
 }
-int charclass::FindTraps() {
+int charclass::cFindTraps() {
 	return charclass::ctskill [2];
 }
-int charclass::RemoveTraps() {
+int charclass::cRemoveTraps() {
 	return charclass::ctskill [3];
 }
-int charclass::ClimbWalls() {
+int charclass::cClimbWalls() {
 	return charclass::ctskill [4];
 }
-int charclass::MoveSilently() {
+int charclass::cMoveSilently() {
 	return charclass::ctskill [5];
 }
-int charclass::HideinShadows() {
+int charclass::cHideinShadows() {
 	return charclass::ctskill [6];
 }
-int charclass::PickPockets() {
+int charclass::cPickPockets() {
 	return charclass::ctskill [7];
 }
-int charclass::HearNoise() {
+int charclass::cHearNoise() {
 	return charclass::ctskill [8];
 }
 // ******************saving throws ***********************'
-int charclass::DeathRayPoison () {
+int charclass::cDeathRayPoison () {
 	return charclass::csaves[2];
 }
 
-int charclass::MagicWands () {
+int charclass::cMagicWands () {
 	return charclass::csaves[3];
 }
-int charclass::ParalysisStone () {
+int charclass::cParalysisStone () {
 	return charclass::csaves[4];
 }
-int charclass::BreathAttack () {
+int charclass::cBreathAttack () {
 	return charclass::csaves[5];
 }
-int charclass::RodStaffSpell () {
+int charclass::cRodStaffSpell () {
 	return charclass::csaves[6];
 };
 
 // ***************cleric/druid turns****************************'
-int charclass::Skeleton () {
+int charclass::cSkeleton () {
 	return charclass::cturns[3];
 }
-int charclass::Zombie () {
+int charclass::cZombie () {
 	return charclass::cturns[4];
 }
-int charclass::Ghoul () {
+int charclass::cGhoul () {
 	return charclass::cturns[5];
 }
-int charclass::Wight () {
+int charclass::cWight () {
 	return charclass::cturns[6];
 }
-int charclass::Wraith () {
+int charclass::cWraith () {
 	return charclass::cturns[7];
 }
-int charclass::Mummy () {
+int charclass::cMummy () {
 	return charclass::cturns[8];
 }
-int charclass::Spectre () {
+int charclass::cSpectre () {
 	return charclass::cturns[9];
 }
-int charclass::Vampire () {
+int charclass::cVampire () {
 	return charclass::cturns[10];
 }
-int charclass::Phantom () {
+int charclass::cPhantom () {
 	return charclass::cturns[11];
 }
-int charclass::Haunt () {
+int charclass::cHaunt () {
 	return charclass::cturns[12];
 }
-int charclass::Spirit () {
+int charclass::cSpirit () {
 	return charclass::cturns[13];
 }
-int charclass::Nightshade () {
+int charclass::cNightshade () {
 	return charclass::cturns[14];
 }
-int charclass::Lich () {
+int charclass::cLich () {
 	return charclass::cturns[15];
 }
-int charclass::Special () {
+int charclass::cSpecial () {
 	return charclass::cturns[16];
 }
 
@@ -493,22 +493,23 @@ void charclass::chooseHair (){
  }
 }
  int charclass::abilitiesadj (int ability) {
-   
+   int adjust;
    	 if (ability >= 3){
-        return (-3);
+        adjust=-3;
    	 }else if (ability >= 4 && ability <= 5){
-        return (-2);
+        adjust= -2;
    	 }else if (ability >= 6 && ability <= 8){
-        return ( -1);
+        adjust=-1;
    	} else if (ability >= 9 && ability <= 1){
-       return ( 0);
+       adjust=0;
    	} else if (ability >= 13 && ability <= 15){
-       return ( 1);
+       adjust=1;
    	} else if (ability >= 16 && ability <= 17){
-        return (2);
+        adjust=2;
    	} else if (ability >= 18){
-        return ( 3);
+        adjust= 3;
  }
+ return (adjust);
 }
 void charclass::abilities(){
     
@@ -724,7 +725,10 @@ int b;
 }
 
 void charclass::ClericTurn(){
-	
+	int b;
+	for (b=0 ; b>=14;  b++){
+		strncpy(cturns [b], turns[cLevel][b],20);
+	}
 }
 
 	
