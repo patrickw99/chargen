@@ -324,6 +324,23 @@ int charclass::cSpecial () {
 	return charclass::cturns[16];
 }
 
+void  rollchar (){
+
+	void chooseSex ();
+	void chooseHeight() ;
+	void chooseHair()  ;
+	void chooseWeight( );
+	void chooseEye () ;
+	void charMovement();
+	void abilities () ;
+	void chooseclass ( ) ;
+	void chooseSpells();
+	void TheifSkill();
+	void ClericTurn();
+	void attackroll() ;
+	void savingthrows();
+}
+
 //'Private functions and sub's
 void charclass::chooseSex(){
 	charclass::cSex = RollDice(1,2);
@@ -521,7 +538,7 @@ void charclass::abilities(){
    
 }
 
-int charclass::chooseclass() {
+void charclass::chooseclass() {
 	int ClassChoice [8]= {0,0,0,0,0,0,0,0};
 	int count  =1;
 	int rclass =0;
@@ -574,9 +591,9 @@ int charclass::chooseclass() {
 	}
 }
    while (rclass == 0){
-    rclass = ClassChoice [rnd_range(0, 8)];
-}
-    return rclass;
+    cClass = ClassChoice [rnd_range(0, 8)];
+	}
+    
 
 
 }
