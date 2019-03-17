@@ -133,16 +133,8 @@ public :
 	int  cPickPockets ();
 	int  cHearNoise ();
 
-
-
-
-
-
 //'public function
 void   rollchar();
-
-
-
 
 };
 
@@ -351,7 +343,7 @@ void charclass::chooseHeight (){
 int height ;
  height = RollDice(1, 10);
  switch (height){
-	case 1:		chrHeight = height; strncpy(cHeight ,chHeight[0],20); break;
+	case FourTen:		chrHeight = height; strncpy(cHeight ,chHeight[0],20); break;
 	case 2:		chrHeight = height;strncpy(cHeight ,chHeight[1],20); break;
 	case 3: 	chrHeight = height;strncpy(cHeight ,chHeight[2],20); break;
 	case 4:		chrHeight = height;strncpy(cHeight ,chHeight[3],20); break;
@@ -366,9 +358,9 @@ int height ;
 void charclass::chooseWeight (){
 
 switch (chrHeight){
-	
+
     case 1:
-        if (cSex == Male){ 
+        if (cSex == Male){
 			cWeight = rnd_range (1100,1199);
         }else{
             cWeight = rnd_range (1050,1099);
@@ -376,7 +368,7 @@ switch (chrHeight){
 
     case 2:
 
-       if (cSex == Male ){ 
+       if (cSex == Male ){
            cWeight = rnd_range (1200,1299);
          }else{
            cWeight = rnd_range (1100 , 1199);
@@ -435,7 +427,7 @@ switch (chrHeight){
 
 }
 void charclass::charMovement(){
-	
+
 		if (cEnc >=0 && cEnc <= 400){
 			cMoveNor = 120;
 			cMoveEnc = 40;
@@ -478,7 +470,7 @@ void charclass::chooseEye (){
 	} else if (eye >=  85 && eye >=100){
 			cEyes =6;
 	}
-	
+
 }
 void charclass::chooseHair (){
 	int   hair   = RollDice(1, 100);
@@ -529,13 +521,13 @@ void charclass::chooseHair (){
  return (adjust);
 }
 void charclass::abilities(){
-    
-    int i; 
+
+    int i;
     for (i = 0 ; i<= 7 ; i++){
         cAbility[i] = RollDice(3,6);
         cadjust[i] = abilitiesadj(cAbility[i]);
    }
-   
+
 }
 
 void charclass::chooseclass() {
@@ -593,7 +585,7 @@ void charclass::chooseclass() {
    while (rclass == 0){
     cClass = ClassChoice [rnd_range(0, 8)];
 	}
-    
+
 
 
 }
@@ -601,7 +593,7 @@ void charclass::chooseclass() {
 void charclass::savingthrows(){
 int i;
 	int b;
-	
+
 	switch (cClass){
 	case	Fighter:
 		for (i = 0 ; i<= 13 ; i++){
@@ -621,7 +613,7 @@ int i;
 			}
 		}
 	 break;
-	
+
 	case	Theif:
 	 for (i = 0 ; i<= 9; i++){
 			if (cLevel >= theifsaves  [i][0] && cLevel <= theifsaves  [i][1]){
@@ -630,7 +622,7 @@ int i;
 				}
 			}
 		}
-	 
+
 	 break;
 	case	Mage:
 	for (i = 0 ; i<=8 ; i++){
@@ -667,18 +659,18 @@ int i;
 				}
 			}
 		}
-	 
+
 	 break;
-	
-	
-		
-	}	
+
+
+
+	}
 }
 void charclass::attackroll() {
 
-int i; 
+int i;
 int b;
-	
+
 	switch (cClass){
 	case	Fighter:
 		for (i = 0 ; i<= 13 ; i++){
@@ -698,7 +690,7 @@ int b;
 				}
 			}
 		}
-	 
+
 	 break;
 	case	Mage:
 	for (i = 0 ; i<= 15 ; i++){
@@ -719,26 +711,26 @@ int b;
 				}
 			}
 		}
-	 
+
 	 break;
-	
-	
-		
+
+
+
 	}
 }
 
 void charclass::chooseSpells(){
-	
+
 }
 void charclass::TheifSkill(){
 
 int b;
-			
+
 				for (b=0 ; b>= 8; b++){
 					ctskill[b]= theifskills  [cLevel][b];
 				}
-		
-		
+
+
 }
 
 void charclass::ClericTurn(){
@@ -748,19 +740,19 @@ void charclass::ClericTurn(){
 	}
 }
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //driver / test
 //#ifdef test
