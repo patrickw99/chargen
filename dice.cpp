@@ -1,4 +1,20 @@
-#include "cgen.h"
+using namespace std;
+#include <string.h>
+//#include <iostream>
+#include <stdio.h>      /* printf, scanf, puts, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
+#include <math.h>
+#include <tgmath.h>
+
+
+#include "dice.h"
+#include "library.h"
+#include "tables.h"
+#include "dice.h"
+
+
+
 
 //'' Function to a random number in the range [first, last), or {first <= x < last}.
 int  rnd_range (int first , int last ){
@@ -8,9 +24,6 @@ int  rnd_range (int first , int last ){
    range = round(rand() % ((last - first +1) + first));
    return (range);
 }
-
-
-
 
 /* boolean convenience functions */
 int CoinToss() {

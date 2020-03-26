@@ -1,8 +1,8 @@
 
-
+#include "library.h"
 // BCXRTLIB: randomize
-void randomize (unsigned int seed)
+void randomize ()
 {
-    srand(seed);"
+    srand(time(NULL));
 }
-    
+

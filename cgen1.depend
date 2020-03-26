@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1585132208 source:d:\cgen1\cgen.cpp
+	"cgen.h"
+
+1585136012 d:\cgen1\cgen.h
+
+1584965335 d:\cgen1\dice.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+
+1584965526 d:\cgen1\library.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+
+1585135448 d:\cgen1\tables.h
+
+1585135275 source:d:\cgen1\dice.cpp
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+	<tgmath.h>
+	"dice.h"
+	"library.h"
+	"tables.h"
+	"dice.h"
+
+1584967518 source:d:\cgen1\main.cpp
+	<iostream>
+	"cgen.h"
+
+1585135173 source:d:\cgen1\tables.cpp
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+	<tgmath.h>
+
+1585135248 source:d:\cgen1\library.c
+	"library.h"
+
